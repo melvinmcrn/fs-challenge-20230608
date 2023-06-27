@@ -19,5 +19,6 @@
     "strictNullChecks": true,
     "noUnusedLocals": false
   },
-  "compileOnSave": true
+  "compileOnSave": true,
+  "include": ["src", "package.json"]
 }
