@@ -1,0 +1,714 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_strategy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "claimableAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int24",
+          "name": "_tickLower",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "_tickUpper",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint184",
+          "name": "_collateralAmount",
+          "type": "uint184"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_tokenPriceE36s",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "computeFairReserves",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "fairTokenReserves",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAllData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "debtRatioE18",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "positionUSDValueE36",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralValueE36",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowValueE36",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "netPnLE36",
+              "type": "int256"
+            },
+            {
+              "internalType": "address[]",
+              "name": "netTokenAddrs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "int256[]",
+              "name": "netTokenAmts",
+              "type": "int256[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "underlyingTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint128[]",
+              "name": "debts",
+              "type": "uint128[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "sharingProfits",
+              "type": "uint256[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "collAmt",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "startTimestamp",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "positionDeadline",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "startLiqTimestamp",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "enum PositionStatus",
+                  "name": "status",
+                  "type": "uint8"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint128",
+                      "name": "inputAmt",
+                      "type": "uint128"
+                    },
+                    {
+                      "internalType": "uint128",
+                      "name": "borrowAmt",
+                      "type": "uint128"
+                    }
+                  ],
+                  "internalType": "struct OpenTokenInfo[]",
+                  "name": "openTokenInfos",
+                  "type": "tuple[]"
+                },
+                {
+                  "internalType": "uint128[]",
+                  "name": "extraCollAmts",
+                  "type": "uint128[]"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraPosInfo",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct Position",
+              "name": "positionInfo",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "uniV3PositionId",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "int24",
+                  "name": "tickLower",
+                  "type": "int24"
+                },
+                {
+                  "internalType": "int24",
+                  "name": "tickUpper",
+                  "type": "int24"
+                }
+              ],
+              "internalType": "struct UniV3ExtraPosInfo",
+              "name": "extraPosInfo",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "feeAmts",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "fairReserves",
+              "type": "uint256[]"
+            }
+          ],
+          "internalType": "struct IUniswapV3Reader.AllData",
+          "name": "allData",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBorrowValueE36",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "borrowValueE36",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCollateralValueE36",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "collateralValueE36",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getDecodedExtraPosInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "uniV3PositionId",
+              "type": "uint128"
+            },
+            {
+              "internalType": "int24",
+              "name": "tickLower",
+              "type": "int24"
+            },
+            {
+              "internalType": "int24",
+              "name": "tickUpper",
+              "type": "int24"
+            }
+          ],
+          "internalType": "struct UniV3ExtraPosInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFairTokenReserves",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "fairReserves",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "inputAmt",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "borrowAmt",
+              "type": "uint128"
+            }
+          ],
+          "internalType": "struct OpenTokenInfo[]",
+          "name": "_openTokenInfos",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "getInputsAndBorrows",
+      "outputs": [
+        {
+          "internalType": "uint128[]",
+          "name": "inputs",
+          "type": "uint128[]"
+        },
+        {
+          "internalType": "uint128[]",
+          "name": "borrows",
+          "type": "uint128[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPendingFeeAmts",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "feeAmts",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPnL",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "int256[]",
+          "name": "netTokens",
+          "type": "int256[]"
+        },
+        {
+          "internalType": "int256",
+          "name": "netPnL",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPositionDebtRatioE18",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "debtRatioE18",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPositionDebts",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint128[]",
+          "name": "debts",
+          "type": "uint128[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPositionInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "collAmt",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint32",
+              "name": "startTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "positionDeadline",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "startLiqTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "enum PositionStatus",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "inputAmt",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint128",
+                  "name": "borrowAmt",
+                  "type": "uint128"
+                }
+              ],
+              "internalType": "struct OpenTokenInfo[]",
+              "name": "openTokenInfos",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "uint128[]",
+              "name": "extraCollAmts",
+              "type": "uint128[]"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraPosInfo",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct Position",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPositionUSDValueE36",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionUSDValueE36",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_positionManager",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_posId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProfitSharing",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "sharingProfits",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}

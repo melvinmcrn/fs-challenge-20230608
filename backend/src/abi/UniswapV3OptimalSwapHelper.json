@@ -1,0 +1,97 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IUniswapV3Pool",
+          "name": "_pool",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amt0In",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amt1In",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int24",
+          "name": "_tickLower",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "_tickUpper",
+          "type": "int24"
+        }
+      ],
+      "name": "getOptimalSwapAmt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amtSwap",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amtOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isZeroForOne",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IUniswapV3Pool",
+          "name": "_pool",
+          "type": "address"
+        },
+        {
+          "internalType": "int24",
+          "name": "_tick",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint24",
+          "name": "_amount",
+          "type": "uint24"
+        }
+      ],
+      "name": "nearestInitializedTick",
+      "outputs": [
+        {
+          "internalType": "int24[]",
+          "name": "nearestInitializedLeftTicks",
+          "type": "int24[]"
+        },
+        {
+          "internalType": "bool[]",
+          "name": "isInitializedLeftTicks",
+          "type": "bool[]"
+        },
+        {
+          "internalType": "int24[]",
+          "name": "nearestInitializedRightTicks",
+          "type": "int24[]"
+        },
+        {
+          "internalType": "bool[]",
+          "name": "isInitializedRightTicks",
+          "type": "bool[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
